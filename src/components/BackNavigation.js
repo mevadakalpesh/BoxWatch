@@ -6,7 +6,7 @@ import {
 import {fontFamilies, color} from '@constants';
 import BackArrowIcon from '@assets/icons/back-arrow.png';
 
-const BackNavigation = ({ labelText = "next" }) => {
+const BackNavigation = ({ labelText = "next", textColor = '#0D1217' }) => {
   return (
     <View style={styles.header}>
       <TouchableOpacity
@@ -20,7 +20,7 @@ const BackNavigation = ({ labelText = "next" }) => {
         />
       </TouchableOpacity>
       <View style={styles.titleWrapper}>
-        <Text style={styles.title}>{labelText}</Text>
+        <Text style={[styles.title,{color : textColor}]}>{labelText}</Text>
       </View>
     </View>
   );
@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '600',
     fontFamily: fontFamilies.SemiBold,
-    color: '#0D1217',
     marginRight: wp('6%'),
   },
 });

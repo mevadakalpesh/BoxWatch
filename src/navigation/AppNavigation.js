@@ -6,12 +6,14 @@ import WelcomeScreen from '@screens/WelcomeScreen';
 import SelectLanguageScreen from '@screens/SelectLanguageScreen';
 import OnboardingScreen from '@screens/OnboardingScreen';
 import SelectPhoneScreen from '@screens/SelectPhoneScreen';
+import OTPVerificationScreen from '@screens/OTPVerificationScreen';
+
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigation = () => {
   
-  let initialRouteName = 'SelectPhoneScreen';
+  let initialRouteName = 'OTPVerificationScreen';
   
   return (
     <NavigationContainer>
@@ -26,6 +28,7 @@ const AppNavigation = () => {
             <Stack.Screen name="SelectLanguageScreen" component={SelectLanguageScreen} />
             <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
             <Stack.Screen name="SelectPhoneScreen" component={SelectPhoneScreen} />
+            <Stack.Screen name="OTPVerificationScreen" component={OTPVerificationScreen} />
             
             
           

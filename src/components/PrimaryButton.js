@@ -1,4 +1,5 @@
-import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
+import React, {useCallback} from 'react';
+import {View, Text, Pressable, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -7,17 +8,20 @@ import {
 import {fontFamilies, color} from '@constants';
 
 const PrimaryButton = ({onPress = () => {}, label = 'Next'}) => {
+  const handlePress = useCallback(() => {
+    onPress();
+  }, [onPress]);
+
   return (
-    <TouchableOpacity
-      style={styles.button}
-      onPress={onPress}
-      activeOpacity={0.8}>
+    <Pressable
+      style={({pressed}) => [styles.button, pressed && {opacity: 0.8}]}
+      onPress={handlePress}>
       <Text style={styles.buttonText}>{label}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
-export default PrimaryButton;
+export default React.memo(PrimaryButton);
 
 const styles = StyleSheet.create({
   button: {
