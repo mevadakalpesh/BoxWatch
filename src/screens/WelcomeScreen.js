@@ -6,19 +6,28 @@ import {
   Image,
   useWindowDimensions,
 } from 'react-native';
+import React, {useEffect} from 'react';
 
 import BoxMan from '@assets/images/welcome.png';
 
 import {fontFamilies, color} from '@constants';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({navigation}) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace('SelectLanguageScreen');
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [navigation]);
+
   const {width, height} = useWindowDimensions();
 
   return (
     <SafeAreaView style={styles.container}>
       <Image
         source={BoxMan}
-        style={[styles.image, {width, height: (height - 150)}]}
+        style={[styles.image, {width, height: height - 150}]}
         resizeMode="cover"
       />
       <View style={styles.textContainer}>

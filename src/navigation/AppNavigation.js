@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator();
 
 const AppNavigation = () => {
   
-  let initialRouteName = 'OTPVerificationScreen';
+  let initialRouteName = 'WelcomeScreen';
   
   return (
     <NavigationContainer>
