@@ -22,9 +22,13 @@ const LANGUAGES = ['+91 84014 31310', '+91 99130 53183'];
 export default function SelectPhoneScreen({navigation}) {
   const [selected, setSelected] = useState('+91 84014 31310');
 
+  const gotoNext = () => {
+    navigation.replace('OTPVerificationScreen');
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <BackNavigation labelText={'Select Phone'} />
+      <BackNavigation labelText={'Select Phone'} backScreen={"OnboardingScreen"} />
 
       <ScrollView
         contentContainerStyle={styles.listContainer}
@@ -65,7 +69,7 @@ export default function SelectPhoneScreen({navigation}) {
         </TouchableOpacity>
       </ScrollView>
 
-      <PrimaryButton label="Apply" />
+      <PrimaryButton label="Apply" onPress={gotoNext} />
     </SafeAreaView>
   );
 }

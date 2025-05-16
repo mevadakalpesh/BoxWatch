@@ -38,7 +38,7 @@ const slides = [
   },
 ];
 
-const OnboardingScreen = ({ navigation }) => {
+const OnboardingScreen = ({navigation}) => {
   const { width, height } = useWindowDimensions();
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const ref = useRef(null);
@@ -56,7 +56,7 @@ const OnboardingScreen = ({ navigation }) => {
       ref?.current.scrollToOffset({ offset });
       setCurrentSlideIndex(nextSlideIndex);
     } else {
-      navigation.replace('Home');
+      navigation.replace('SelectPhoneScreen');
     }
   };
 

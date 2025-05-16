@@ -21,10 +21,14 @@ const LANGUAGES = ['English', 'Hindi', 'Gujarati', 'Tamil'];
 export default function SelectLanguageScreen({navigation}) {
   const [selected, setSelected] = useState('English');
 
+  const gotoNext = () => {
+    navigation.replace('OnboardingScreen');
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       
-      <BackNavigation labelText={"Select Language"} />
+      <BackNavigation labelText={"Select Language"} backScreen={gotoNext}/>
 
       <ScrollView
         contentContainerStyle={styles.listContainer}
@@ -50,7 +54,7 @@ export default function SelectLanguageScreen({navigation}) {
         ))}
       </ScrollView>
 
-      <PrimaryButton />
+      <PrimaryButton onPress={gotoNext} />
     </SafeAreaView>
   );
 }

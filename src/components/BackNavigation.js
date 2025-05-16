@@ -5,14 +5,15 @@ import {
 } from 'react-native-responsive-screen';
 import {fontFamilies, color} from '@constants';
 import BackArrowIcon from '@assets/icons/back-arrow.png';
+import {useNavigation} from '@react-navigation/native';
 
-const BackNavigation = ({ labelText = "next", textColor = '#0D1217' }) => {
+const BackNavigation = ({labelText = 'next', textColor = '#0D1217', backScreen = null}) => {
+
   return (
     <View style={styles.header}>
       <TouchableOpacity
         style={styles.backButton}
-        // onPress={() => navigation.goBack()}
-        >
+        onPress={backScreen}>
         <Image
           source={BackArrowIcon}
           style={styles.backImage}
@@ -20,7 +21,7 @@ const BackNavigation = ({ labelText = "next", textColor = '#0D1217' }) => {
         />
       </TouchableOpacity>
       <View style={styles.titleWrapper}>
-        <Text style={[styles.title,{color : textColor}]}>{labelText}</Text>
+        <Text style={[styles.title, {color: textColor}]}>{labelText}</Text>
       </View>
     </View>
   );
