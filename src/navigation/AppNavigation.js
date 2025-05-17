@@ -8,13 +8,14 @@ import OnboardingScreen from '@screens/OnboardingScreen';
 import SelectPhoneScreen from '@screens/SelectPhoneScreen';
 import OTPVerificationScreen from '@screens/OTPVerificationScreen';
 import UserDashboard from '@screens/user/UserDashboard';
-
+import TripDetailsScreen from '@screens/TripDetailsScreen';
+import SelectVehicleScreen from '@screens/SelectVehicleScreen';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigation = () => {
   
-  let initialRouteName = 'UserDashboard';
+  let initialRouteName = 'SelectVehicleScreen';
   
   return (
     <NavigationContainer>
@@ -31,6 +32,9 @@ const AppNavigation = () => {
             <Stack.Screen name="SelectPhoneScreen" component={SelectPhoneScreen} />
             <Stack.Screen name="OTPVerificationScreen" component={OTPVerificationScreen} />
             <Stack.Screen name="UserDashboard" component={UserDashboard} />
+
+            <Stack.Screen name="TripDetailsScreen" component={TripDetailsScreen} />
+            <Stack.Screen name="SelectVehicleScreen" component={SelectVehicleScreen} />
             
        </Stack.Navigator> 
     </NavigationContainer>
